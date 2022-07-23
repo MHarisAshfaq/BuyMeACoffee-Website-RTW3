@@ -129,10 +129,10 @@ export default function Home() {
             <InputForm setCurrentAccount={setCurrentAccount} />
             <div className={styles.grid}>
               {memos && memos.length
-                ? memos.map((memo) => {
+                ? memos.map((memo, index) => {
                     return (
-                      <a href="#" className={styles.card}>
-                        <h2>{memo.name} &rarr;</h2>
+                      <a href="#" className={styles.card} key={index}>
+                        <h2>{memo.name}</h2>
                         <p>{memo.message}</p>
                         {/* <p>{memo.timestamp}</p> */}
                       </a>
@@ -151,7 +151,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <span className={styles.logo}>
-            Created by @Haris for Alchemy's Road to Web3!
+            {"Created by @Haris for Alchemy's Road to Web3!"}
           </span>
         </a>
       </footer>
